@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahdii.com</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #000;
+    }
+
+    /* Transparent Intro Screen */
+    #intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    #intro-screen h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Profile Picture */
+    #profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    /* Username */
+    #username {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: white;
+      display: none;
+    }
+
+    /* Bio */
+    #bio {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+      text-align: center;
+      display: none;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      margin-top: 10px;
+    }
+
+    /* Icons Container */
+    #icons-container {
+      display: none;
+    }
+
+    #icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    /* Icon Styles */
+    .icon {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.2);
+    }
+
+    /* Video Background */
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      z-index: -1;
+    }
+
+    /* Viewer Counter */
+    .viewer-counter {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 3;
+    }
+
+    .viewer-counter .icon {
+      font-size: 1.8rem;
+      margin-right: 8px;
+    }
+
+    .viewer-counter .number {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro Screen -->
+  <div id="intro-screen" onclick="enterSite()">
+    <h1>Click.</h1>
+  </div>
+
+  <!-- Profile Picture -->
+  <img id="profile-pic" src="image/pfp.jpg" alt="Profile Picture">
+
+  <!-- Username -->
+  <div id="username">wizzler0_0</div>
+
+  <!-- Bio -->
+  <div id="bio">Ronaldoooo</div>
+
+  <!-- Icons Container -->
+  <div id="icons-container">
+    <div id="icons">
+      <a href="https://discord.gg/punjab" target="_blank">
+        <img class="icon" src="soc/discord.png" alt="Discord">
+      </a>
+      <a href="https://mail.google.com" target="_blank">
+        <img class="icon" src="soc/email.png" alt="Email">
+      </a>
+      <a href="https://github.com/Funkaarfam" target="_blank">
+        <img class="icon" src="soc/github.png" alt="GitHub">
+      </a>
+      <a href="https://www.instagram.com/1nonlyfahdii/" target="_blank">
+        <img class="icon" src="soc/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://open.spotify.com/" target="_blank">
+        <img class="icon" src="soc/spotify.png" alt="Spotify">
+      </a>
+      <a href="https://www.youtube.com/@MusicHubfr" target="_blank">
+        <img class="icon" src="soc/youtube.png" alt="YouTube">
+      </a>
+    </div>
+  </div>
+
+  <!-- Background Video -->
+  <video id="background-video" loop>
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Viewer Counter -->
+  <div class="viewer-counter">
+    <span class="icon">👁️‍🗨️</span>
+    <span class="number">134</span>
+  </div>
+
+  <script>
+    function enterSite() {
+      // Hide the intro screen
+      document.getElementById('intro-screen').style.display = 'none';
+      
+      // Show the profile picture
+      document.getElementById('profile-pic').style.display = 'block';
+
+      // Show the username
+      document.getElementById('username').style.display = 'block';
+
+      // Show the bio
+      document.getElementById('bio').style.display = 'block';
+
+      // Show the icons
+      document.getElementById('icons-container').style.display = 'block';
+
+      // Show and play the video
+      const video = document.getElementById('background-video');
+      video.style.display = 'block';
+      video.play();
+    }
+  </script>
+</body>
+</html>
